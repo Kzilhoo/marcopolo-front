@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ICollaborator} from '../model/collaborator';
+import {ICollaborator, ICollaboratorArray} from '../model/collaborator';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class CollaboratorComponent implements OnInit {
   // avec le contenu de la propriété 'collaborators'
   // dans la balise html du Component :
   // ex: <CollaboratorList [collaborators]="[1,2,3]"></CollaboratorList>
-  @Input() collaborator: ICollaborator;
+  @Input() collaborator: ICollaboratorArray;
   constructor() { }
 
   ngOnInit() {
