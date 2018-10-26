@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ICollaborator, ICollaboratorArray} from '../model/collaborator';
+import {Component, Input, OnInit, ViewChild, EventEmitter} from '@angular/core';
+import {ICollaborator} from '../model/collaborator';
+import {TransmissionService} from '../transmission.service';
+import {ResumeComponent} from '../resume/resume.component';
 
 
 @Component({
@@ -8,14 +10,16 @@ import {ICollaborator, ICollaboratorArray} from '../model/collaborator';
   styleUrls: ['./collaborator.component.scss']
 })
 export class CollaboratorComponent implements OnInit {
-  // cette variable sera instanciée par angular automatiquement
-  // avec le contenu de la propriété 'collaborators'
-  // dans la balise html du Component :
-  // ex: <CollaboratorList [collaborators]="[1,2,3]"></CollaboratorList>
-  @Input() collaborator: ICollaboratorArray;
-  constructor() { }
-
-  ngOnInit() {
+  @ViewChild(ResumeComponent)child: ResumeComponent;
+  @Input() collaborator: ICollaborator;
+  constructor(private transmissionService: TransmissionService) {
   }
 
+  ngOnInit() {
+    console.log(this.collaborator);
+  }
+  updateCollaborator(collaborator): void {
+    console.log('COLLABORATOR-CLICK');
+    this.transmissionService.updateCollaborator(collaborator);
+  }
 }

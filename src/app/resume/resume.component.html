@@ -1,0 +1,54 @@
+<div id="details" *ngIf="collaborator">
+  <div class="resume">
+    <div class="header">Profil sélectionné</div>
+    <div class="header"> {{ collaborator.workstation }}</div>
+    <div class="picture"><img class="img-circle" src="{{ collaborator.pictureUrl }}"></div>
+    <div class="name"> {{ collaborator.firstName  + ' ' +  collaborator.name }}</div>
+    <div *ngFor="let office of collaborator.offices | slice:0:1" class="offices" > {{ office.name }}  </div>
+    <div class="mail"> {{ collaborator.email }}</div>
+    <div class="fixNumber"> {{ collaborator.fixNumber }}</div>
+    <div  *ngFor="let skill of collaborator.skills" class="skills" >
+      <mat-chip class="chipWhite"> {{ skill.name }} </mat-chip>
+    </div>
+    <div *ngFor="let project of collaborator.projects" class="projects" >
+      <mat-chip class="chipWhite">{{ project.name }} </mat-chip>
+    </div>
+  </div>
+  <div class="collaborator-profile">
+    <div class="header">Editez-votre profil</div>
+    <div class="label">
+      <div>Prénom</div>
+      <div>Nom</div>
+      <div>Poste</div>
+      <div>Mail</div>
+      <div class="onSite">Sur site</div>
+    </div>
+    <div class="inputCollab">
+      <div><input type="text" class="inputProfile"  value="{{ collaborator.firstName }}" placeholder="Entrez votre prénom ici..." autofocus/></div>
+      <div><input type="text" class="inputProfile"  value="{{ collaborator.name }}" placeholder="Entrez votre nom ici..."autofocus/></div>
+      <div *ngFor="let office of collaborator.offices | slice:0:1" class="updateFirstName"><input type="text" class="inputProfile"  value="{{ office.name }}" placeholder="Entrez votre poste ici..."autofocus/></div>
+      <div class="updateMail"><input type="text" class="inputProfile" value="{{ collaborator.email }}" placeholder="Entrez votre adresse e-mail ici..." autofocus/></div>
+    </div>
+  </div>
+  <div class="phone-profile">
+    <div class="header">Modifiez vos coordonnées téléphoniques</div>
+    <div>Téléphone fixe GFI</div>
+    <div><input type="text" class="inputProfile"  placeholder="Entrez votre fixe" value="{{ collaborator.fixNumber }}" autofocus/></div>
+    <div>Téléphone portable GFI</div>
+    <div><input type="text" class="inputProfile"  placeholder="Entrez vos portable" value="{{ collaborator.mobileNumber }}" autofocus/></div>
+  </div>
+  <div class="workstation-profile">
+    <div class="header">Sélectionnez votre position de travail</div>
+    <div>Position de travail</div>
+    <div>BlablablaTEST</div>
+  </div>
+  <div class="skills-profile">
+    <div>Sélectionnez vos compétences</div>
+    <div>Rechercher une compétence</div>
+  </div>
+
+  <div class="projects-profile">
+    <div class="header">Sélectionnez vos projets</div>
+    <div class="header">Rechercher un projet</div>
+  </div>
+</div>

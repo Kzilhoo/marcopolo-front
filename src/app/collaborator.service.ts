@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { ICollaborator, ICollaboratorArray } from './model/collaborator';
+import { ICollaborator, ICollaboratorObject } from './model/collaborator';
 import { Observable } from 'rxjs/internal/Observable';
 @Injectable()
 export class CollaboratorService {
@@ -9,9 +9,12 @@ export class CollaboratorService {
     'X-AUTH-TOKEN': 'iaculis.enim@massalobortis.net'
   });
   constructor(private http: HttpClient) {}
-  search(terms: string): Observable<ICollaboratorArray> {
-    const options = { params: new HttpParams().set('name', terms), headers: this.getHeaders };
-    return this.http.get<ICollaboratorArray>('//10.0.75.1/app_dev.php/search', options);
+  search(terms, filters): Observable<ICollaboratorObject> {
+    const options = { params: new HttpParams()
+        .set('name', terms.join(','))
+        .append('filters', filters.join(',')),
+         headers: this.getHeaders };
+    return this.http.get<ICollaboratorObject>('//10.0.75.1/app_dev.php/search', options);
   }
   // get one collaborator,
   getOneCollaborator(name: string): Observable<ICollaborator> {

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ICollaborator, ICollaboratorArray} from '../model/collaborator';
+import {ICollaboratorObject} from '../model/collaborator';
 
 @Component({
   selector: 'app-list-collaborator',
@@ -7,15 +7,14 @@ import {ICollaborator, ICollaboratorArray} from '../model/collaborator';
   styleUrls: ['./list-collaborator.component.scss']
 })
 export class ListCollaboratorComponent implements OnInit {
-  // cette variable sera instanciée par angular automatiquement
-  // avec le contenu de la propriété 'collaborators'
-  // dans la balise html du Component :
-  // ex: <CollaboratorList [collaborators]="[1,2,3]"></CollaboratorList>
-  @Input() collaborators: ICollaboratorArray[];
+  @Input() collaborators: ICollaboratorObject;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.collaborators);
   }
 
 }

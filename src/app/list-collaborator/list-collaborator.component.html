@@ -1,3 +1,21 @@
-<app-collaborator
-  [collaborator] = "collaborators">
-</app-collaborator>
+<div class="listeCollaborateurs">
+    <hr>
+    <span class="category">Collaborateurs</span>
+    <span class="details" *ngFor="let OneCollaborator of collaborators?.byCollaborator">
+      <app-collaborator [collaborator]="OneCollaborator"></app-collaborator>
+      <mat-divider [inset]="true"></mat-divider>
+    </span>
+    <hr>
+    <div class="category">Compétences</div>
+    <span class="details" *ngFor="let OneCollaborator of collaborators?.byOffice">
+      <app-collaborator [collaborator]="OneCollaborator"></app-collaborator>
+      <mat-divider [inset]="true"></mat-divider>
+    </span>
+    <hr>
+    <div class="category">Projets</div>
+    <span class="details" *ngFor="let OneCollaborator of collaborators?.byProject">
+      <app-collaborator [collaborator]="OneCollaborator"></app-collaborator>
+      <mat-divider [inset]="true"></mat-divider>
+    </span>
+  </div>
+

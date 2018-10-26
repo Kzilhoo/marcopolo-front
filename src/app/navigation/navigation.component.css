@@ -1,16 +1,43 @@
 .sidenav-container {
   height: 100%;
-
+}
+.center-block {
+  margin: auto;
+  display: block;
 }
 
-
+input{
+  border-radius: 50px;
+  width: 300px;
+}
+.mat-primary{
+  background-color:#353A3E;
+}
+.mat-accent{
+  background-color:#A6C1B2;
+}
+.navlist {
+  color: white;
+}
+.chips{
+  color:white;
+}
+.filtersFont{
+  font-weight: bold;
+}
 
 .sidenav {
-  width: 400px;
-  background-color: #353434;
-
+  width: 450px;
+  background-color: #353A3E;
 }
-
+.filters{
+  padding-top:3%;
+  padding-left:16.8%;
+}
+.logo{
+  padding-bottom:3%;
+  padding-left:40%;
+}
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;

@@ -1,1 +1,6 @@
-<p>{{collaborator.byCollaborator.}}</p>
+<div class="OneCollaborator" (click) = updateCollaborator(collaborator)>
+  <div class="collaboratorPicture"><img class="img-circle" src="{{ collaborator.pictureUrl }}"></div>
+  <div class="OneCollaboratorNameFirstName"> {{ collaborator.firstName + ' ' + collaborator.name.toUpperCase()}}  </div>
+  <div *ngFor="let office of collaborator.offices | slice:0:1" class="OneCollaboratorOffices" > {{ office.name }}  </div>
+  <div class="OneCollaboratorDetails"><i class="material-icons">phone</i> {{ collaborator.fixNumber + ' ' }}<i class="material-icons">place</i>{{' ' + collaborator.building + ' ' + collaborator.floor + ' ' + collaborator.workstation}} </div>
+</div>
