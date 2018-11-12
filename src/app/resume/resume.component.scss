@@ -15,7 +15,10 @@
   font-family: 'Karla-Bold';
 }
 .header{
+  display:flex;
   color:#B5B5B5;
+  flex-direction:row;
+  background-color: red;
 }
 .chipWhite{
   background-color:white;
@@ -29,16 +32,19 @@
   box-shadow: 1px 1px 12px #555;
 }
 .label{
-  displax:flex;
+  display:flex;
   flex-direction:column;
+  background-color: green;
 }
 .inputCollab{
   display:flex;
   flex-direction: column;
+  background-color: blue;
 }
 input{
   border-radius:50px;
   border:2px solid #D3D3D3;
+
 }
 .resume {
   display: flex;
@@ -54,20 +60,19 @@ input{
 }
 
 .collaborator-profile{
-  display:flex;
-  position:relative;
-  width:37.5%;
-  height:50%;
-  flex-direction: row;
   border-right:solid;
   border-right-color:#EFEFEF;
   border-right-width: thin;
   border-bottom:solid;
   border-bottom-width: thin;
   border-bottom-color:#EFEFEF;
+  display:flex;
+  position:relative;
+  width:37.5%;
+  height:50%;
+  flex-direction: row;
   justify-content:center;
   align-items:center;
-  align-content:center;
 
 }
 .phone-profile{
